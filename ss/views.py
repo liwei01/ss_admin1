@@ -18,10 +18,15 @@ def index(requset):
 
 #################
 #用户中心
-@login_required(login_url="/ss/login/")
+#@login_required(login_url="/ss/login/")
+@login_required(login_url="/ss/login/?next=%s")
 def user(requset):
+    '''
+    if not requset.user.is_authenticated():
+        #转到登陆页面，登陆完之后，反回原来页面
+        return HttpResponseRedirect('/ss/login/?next=%s' % requset.path)
+        '''
     title = '用户中心'
-
     if  requset.user.is_authenticated():
         user_id = requset.user.id
         user_name = requset.user.username

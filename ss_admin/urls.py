@@ -1,6 +1,7 @@
 # -*- coding: utf-8
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.auth.views import login,logout
 from ss import views as ss_views
 
 urlpatterns = [
@@ -24,6 +25,7 @@ urlpatterns = [
 
     url(r'^ss/login',ss_views.login),
     url(r'^ss/logout',ss_views.logout),
+    url(r'^accounts/login/$',login),
    # url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}),
    # url(r'^logout/$', 'django.contrib.auth.views.logout', {'template_name': 'logout.html'}),
     #用户注册

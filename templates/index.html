@@ -1,14 +1,16 @@
 {% extends "index-base.html" %}
 
-{% block mainbody %}
 
-{% if request.user.is_authenticated %}
-    {{ request.user.username }}，您好！
-{% else %}
-    请登陆，这里放登陆链接
+{% block content %}
+
+    {% if request.user.is_authenticated %}
+        {{ request.user.username }}，您好！
+    {% else %}
+        请登陆，这里放登陆链接
 
 
-{% endif %}
-    11
-    <a href="{{ request.path }}?{{ request.GET.urlencode }}">当前网址加参数 delete</a>
+    {% endif %}
+        11
+        <a href="{{ request.path }}?{{ request.GET.urlencode }}">当前网址加参数 delete</a>
+
 {% endblock %}

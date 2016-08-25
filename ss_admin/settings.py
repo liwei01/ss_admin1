@@ -107,3 +107,12 @@ STATIC_URL = '/static/'
 #在settings中设置AUTH_USER_MODEL:
 # 格式为 "<django_app名>.<model名>"
 AUTH_USER_MODEL = "ss.User"
+
+#用邮箱验证
+EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.angeldoctor.net'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'qinlv@angeldoctor.net'
+EMAIL_HOST_PASSWORD = 'XXX'

@@ -1,0 +1,29 @@
+{% extends "ss/base.html" %}
+
+{% block mainbody %}
+
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<table class="table">
+                <thead>
+                    <tr>  <th> 编号  </th><th>产品名称</th> <th>产品说明</th> <th>价格</th> </tr>
+                </thead>
+                <tbody>
+                        {% for i in Product %}
+                            <tr class="success">
+                                <td class="well">{{i.id}}</td><td >{{i.product_name}}</td><td class="well">{{i.description}}</td><td>{{i.price}}
+                                <button  type="button" class="btn btn-default">购买</button>
+                            </td>
+                            </tr>
+                        {% endfor %}
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}

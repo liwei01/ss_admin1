@@ -1,0 +1,22 @@
+{% extends "ss/base.html" %}
+
+{% block mainbody %}
+
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<table class="table">
+                <thead>
+                    <tr>    <th> email :</th><th>{{ info.email  }}</th> </tr>
+                    <tr>    <th>登陆密码：</th> <th>{{ info.pass_field }}</th>   </tr>
+                    <tr>    <th>ss密码：</th>  <th>{{ info.passwd }}</th>  </tr>
+
+                </thead>
+
+			</table>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,34 @@
+# -*- coding: utf-8
+
+新建一个 django project
+django-admin.py startproject project-name
+新建 app
+python manage.py startapp app-name
+或 django-admin.py startapp app-name
+
+同步数据
+python manage.py syncdb # 进入 manage.py 所在的那个文件夹下输入这个命令
+
+注意：Django 1.7 及以上的版本需要用以下命令
+python manage.py makemigrations
+python manage.py migrate
+
+
+如果是 Django 不主动提示创建管理员（Django 1.9不提示）用下面的命令创建一个帐号
+python manage.py createsuperuser
+
+
+INSERT INTO `user` VALUES ('2', 'test2@test.com', '123456', '0000000', '1410609560', '0', '0', '9320666234', '50000', '1', '1', '7', '0', '0');
+INSERT INTO `user` VALUES ('3', 'test3@test.com', '123456', '0000000', '1410609560', '0', '0', '9320666234', '50000', '1', '1', '7', '0', '0');
+INSERT INTO `user` VALUES ('4', 'test4@test.com', '123456', '0000000', '1410609560', '0', '0', '9320666234', '50000', '1', '1', '7', '0', '0');
+
+
+从现在的数据库表结构导出成 django models.py
+python manage.py inspectdb > model.py
+
+ 用户中心
+ 节点列表
+ 我的信息
+ 流量记录
+ 修改资料
+ 邀请好友

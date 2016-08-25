@@ -1,0 +1,64 @@
+{% extends "ss/base.html" %}
+
+{% block mainbody %}
+{% for i in node %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="box box-widget">
+            <div class="box-body">
+                <ul class="products-list product-list-in-box">
+                    <li class="item">
+
+                        <div class="product-info">
+                            <a href="./node/5" class="product-title">{{i.node_name}} <span
+                                        class="label label-info pull-right"></span></a>
+                            <p>
+
+                            </p>
+                        </div>
+                    </li><!-- /.item -->
+                </ul>
+            </div>
+            <div class="box-footer no-padding">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="nav nav-stacked">
+                            <li><a href="./node/5">节点地址 <span
+                                            class="pull-right badge bg-blue">{{i.node_server}}</span></a></li>
+                            <li><a href="./node/5">连接端口 <span
+                                            class="pull-right badge bg-aqua">{{port}}</span></a></li>
+                            <li><a href="./node/5">加密方式 <span
+                                            class="pull-right badge bg-green"> rc4-md5 </span></a>
+                            </li>
+                            <li><a href="./node/5">负载: <span
+                                            class="pull-right badge bg-green">暂无数据</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="nav nav-stacked">
+                            <li><a href="./node/5">流量比例 <span
+                                            class="pull-right badge bg-blue">1</span></a>
+                            </li>
+                            <li><a href="./node/5">在线人数 <span
+                                            class="pull-right badge bg-aqua">暂无数据</span></a>
+                            </li>
+                            <li><a href="./node/5">产生流量 <span
+                                            class="pull-right badge bg-green">暂无数据</span></a>
+                            </li>
+                            <li><a href="./node/5">Uptime: <span
+                                            class="pull-right badge bg-green">暂无数据</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- /.widget-user -->
+    </div><!-- /.col -->
+</div>
+<!-- /.row -->
+{% endfor %}
+
+
+{% endblock %}

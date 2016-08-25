@@ -21,12 +21,13 @@ def index(requset):
 @login_required(login_url="/ss/login/")
 def user(requset):
     title = '用户中心'
-    user = User.objects.all()
+
     if  requset.user.is_authenticated():
         user_id = requset.user.id
         user_name = requset.user.username
         print user_id
         print user_name
+        user = User.objects.all().get(id=user_id)
     return render_to_response('ss/user.html',{'user':user,'title':title})
 
 #我的信息
@@ -133,6 +134,7 @@ def register(request):
             password1 = request.POST.get('password1','')
             email = request.POST.get('email','')
             user = auth.authenticate(username=username,password=password,email=email)
+            user1 = auth.authenticate(username=username)
             if user is  None :
                 #取id最大用的port
                 port_id = User.objects.values('port').latest('id')
@@ -163,16 +165,17 @@ def login(request):
     else:
         form = LoginForm(request.POST)
         if form.is_valid():
-            email = request.POST.get('email')
+            #email = request.POST.get('email')
             username = request.POST.get('username','')
             password = request.POST.get('password','')
             user = auth.authenticate(username=username ,password=password)
-            print email
-            print password
-            print user
+            #print email
+            #print password
+            #print user
             if user is not None and user.is_active:
                 auth.login(request,user)
-                return render_to_response('index.html',RequestContext(request))
+            #    return render_to_response('index.html',RequestContext(request))
+                return HttpResponseRedirect('/ss/user')
             else:
                 return render_to_response('login.html',RequestContext(request,{'form':form,'password_is_wrong':True}))
         else:

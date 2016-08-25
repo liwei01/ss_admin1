@@ -14,7 +14,7 @@
 
         <form class="form-horizontal" action="" method="post">
             {% csrf_token %}
-            <table>
+            <table class="well">
             <tr>
                 <td>{{ form.username.label_tag }}</td>
                 <td>{{ form.username }}</td>
@@ -35,7 +35,7 @@
 
             <p class="form-actions">
                 <input type="submit" value="注册" class="btn btn-primary">
-                <a href="/login"><input type="button" value="已有账号，登陆" class="btn btn-success"></a>
+                <a href="/ss/login"><input type="button" value="已有账号，登陆" class="btn btn-success"></a>
             </p>
         </form>
 
